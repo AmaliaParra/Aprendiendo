@@ -2,7 +2,7 @@
 # parametro: nombre de la variaboe dentro de la función. Para que una variable tenga mas de un parametro, estos van dentros del parentesis y se separan por comas
 # argumento: valores que se le entregan a la funion
 # para llamar a una funcion: se indica la funcion y entre parentesis se indica el argumento "nombreFuncion + ()"
-
+# Iterar:
 # ___________________________________________________________________________________________________________________________________________________________________________________
 # 1.1. FUNCION str: string
 
@@ -122,12 +122,36 @@ print(len(nombre_curso))
 # Solo permite datos que no se modificarán, como: tupla,
 conjunto = set(["Dato1", "Dato2"])
 print(conjunto)
+# ===================================================================================================================================================================================
+# issubset: Entregará una respuesta booleana, y determinará si el argumento es un subconjunto de (argumento2)
+conjuntoA = {1, 2, 4, 6}
+conjuntoB = {1, 6}
+conjuntoC = conjuntoB.issubset(conjuntoA)
+print(conjuntoC)
 
+# otra forma
+conjuntoC = conjuntoB <= conjuntoA
+print(conjuntoC)
+# ===================================================================================================================================================================================
+# superset: Entregará una respuesta booleana, y determinará si el argumento es un superconjunto de (argumento2)
+conjuntoA = {1, 2, 4, 6}
+conjuntoB = {1, 6}
+conjuntoC = conjuntoB.issuperset(conjuntoA)
+print(conjuntoC)
+
+# otra forma
+conjuntoC = conjuntoB > conjuntoA
+print(conjuntoC)
+
+# ===================================================================================================================================================================================
+# isdisjoint: entregará un resultado booleano y verifica si no hay datos en comun
+conjuntoC = conjuntoB.isdisjoint(conjuntoA)
+print(conjuntoC)
 # ===================================================================================================================================================================================
 # Funcion frozenset
 # permite poner un conjunto dentro de otro conjunto
-conjunto1 = frozenset({"Dato 1" , "Dato 2"})
-conjunto2 = {conjunto1 , "Dato 3"}
+conjunto1 = frozenset({"Dato 1", "Dato 2"})
+conjunto2 = {conjunto1, "Dato 3"}
 print(conjunto2)
 
 # ===================================================================================================================================================================================
@@ -135,7 +159,7 @@ print(conjunto2)
 # es como una lista, pero no se puede modificar más adelante
 # se puede hacer con ([])
 # ejemplo
-fono = tuple(["966", "00", "68", "15" ])
+fono = tuple(["966", "00", "68", "15"])
 print(type(fono))
 # otra forma
 fona = "966", "00"
@@ -184,22 +208,36 @@ print(lista)
 # ===================================================================================================================================================================================
 # INPUT: permite recibir datos del usuario
 # cuando se necesita una respuesta de string
-nombre_input = input("Escribe tu nombre: ")
+""" nombre_input = input("Escribe tu nombre: ")
 # cuando se necesita una respuesta numerica
 edad_entero = int(input("Escribe tu edad: "))
 edad_decimal = float(input("Escribe tu edad con meses: "))
-
+ """
 # ===================================================================================================================================================================================
 # DICCIONARIO
 # Estructura: keys: value, value, value etc
 # o keys : value ,
 #          value ,
+# debe usar solo datos "hashable"
 
 diccionario = {
     "lugar": "Casa",
     "color": "blanca",
     "fnac": "1998"
 }
+# dict: crear diccionario
+diccionario2 = dict(Nombre2="Amallita", apellido2="Parra")
+print(diccionario2)
+
+# fromkeys: crea diccionario con cualquier valor none
+diccionario2 = dict.fromkeys("nombre1", "apellido2")
+print(diccionario2)
+# si, "diccionario3 = dict.fromkeys()" se ingresa solo con parentesis, del primer argumento usará la primera letra para elaborar keys
+# si, "diccionario3 = dict.fromkeys([])" se crea una lista dentro, entonces, tomara cada argumento como una key
+diccionario2 = dict.fromkeys(["nombre1", "apellido2"])
+print(diccionario2)
+# si, "print(diccionario3 = dict.fromkeys("argumento"))" imprimirá solo el argumento y su none respectuivo
+print(diccionario2["apellido2"])
 
 # keys: devuelve las claves y iterar
 print(diccionario.keys())
@@ -455,10 +493,10 @@ while numero2 < 100:
     print(numero2)
     numero2 *= 2
 
-comando = ""
+""" comando = ""
 while comando.lower() != "salir":
     comando = input("$ ")
-    print(comando)
+    print(comando) """
 # se agrega metodo "lower" para que el comando sea como sea que lo escriba el usuario este sea efectivo
 
 # loops infinitos: es cuando no se tiene una condicion de salida, por lo tanto se ejecuta para siempre
@@ -471,7 +509,7 @@ for j in range(3):  # ejeuta de arriba a abajo #outer for/loop
 # CREAR FUNCIONES
 # estrufctura:
     # def nombreFuncion():
-    #       en esta seccion van las instrucciones de la nueva variable
+    # en esta seccion van las instrucciones de la nueva variable
 
 
 def hola():
@@ -516,6 +554,18 @@ hola4(variable7="salgado", variable6="paz")
 def suma(a, b):
     print(a + b)
 
+
 suma(2, 5)
 
+# _________________________________________________________________________________________________________
+# BUCLE
+# sentencias que permiten iterar
 
+# for in: crea una variable
+# 1. crea lista
+# 2. bucle se ejecuta segun cuantos argumentos haya en la lista
+
+flores = (["Doca", "Tara", "Espino", "Chagual", "Manzanilla"])
+# la variable "flor" no se declara, porque solo se usa en esa variable de codigo
+for flor in flores:
+    print(f"Ahora la variable es igual a: {flor}")
