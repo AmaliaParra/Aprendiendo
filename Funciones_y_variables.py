@@ -1,5 +1,3 @@
-PYTHON
-
 # funciones
 # parametro: nombre de la variaboe dentro de la función. Para que una variable tenga mas de un parametro, estos van dentros del parentesis y se separan por comas
 # argumento: valores que se le entregan a la funion
@@ -114,17 +112,34 @@ print(nombre_curso, descripcion_curso)
 print(type(nombre_curso))
 # ===================================================================================================================================================================================
 # funcion len
-# permite obtene la longitud del string
+# permite obtener la longitud del string
 # estructura: len(argumento)
 # a continuacion se desea imprimir en monitor la funcion len, por lo tanto se agrega previo a la funcion, la funcion "print"
 print(len(nombre_curso))
 # ===================================================================================================================================================================================
+# Funncion set
+# permite crear conjuntos
+# Solo permite datos que no se modificarán, como: tupla,
+conjunto = set(["Dato1", "Dato2"])
+print(conjunto)
+
+# ===================================================================================================================================================================================
+# Funcion frozenset
+# permite poner un conjunto dentro de otro conjunto
+conjunto1 = frozenset({"Dato 1" , "Dato 2"})
+conjunto2 = {conjunto1 , "Dato 3"}
+print(conjunto2)
+
+# ===================================================================================================================================================================================
 # FUNCION tupla
 # es como una lista, pero no se puede modificar más adelante
-# se puede hacer con doble parentesis
+# se puede hacer con ([])
 # ejemplo
-fono = ((966, 00, 68, 15))
-print(fono)
+fono = tuple(["966", "00", "68", "15" ])
+print(type(fono))
+# otra forma
+fona = "966", "00"
+print(type(fona))
 # ===================================================================================================================================================================================
 # FUNCION list
 # permite crear una lista
@@ -501,5 +516,6 @@ hola4(variable7="salgado", variable6="paz")
 def suma(a, b):
     print(a + b)
 
-
 suma(2, 5)
+
+
