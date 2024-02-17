@@ -156,6 +156,8 @@ print(conjunto2)
 
 # ===================================================================================================================================================================================
 # FUNCION tupla
+# es una secuencia ordenada e inmutable de elementos. Las tuplas se definen utilizando paréntesis (). Aunque los elementos de una tupla pueden ser de cualquier tipo, las tuplas son inmutables, lo que significa que una vez creadas, no se pueden modificar, añadir o eliminar elementos.
+# estructura: mi_tupla = (valor1, valor2, valor3)
 # es como una lista, pero no se puede modificar más adelante
 # se puede hacer con ([])
 # ejemplo
@@ -166,6 +168,8 @@ fona = "966", "00"
 print(type(fona))
 # ===================================================================================================================================================================================
 # FUNCION list
+# es una secuencia ordenada y mutable de elementos. Las listas se definen utilizando corchetes []. Los elementos de una lista pueden ser de cualquier tipo y pueden ser modificados después de la creación. Puedes añadir, eliminar, modificar y reordenar los elementos de una lista
+# estructura: mi_lista = [valor1, valor2, valor3]
 # permite crear una lista
 lista = list(["Amalia", "25 AÑOS", "ESCORPIO"])
 print(lista)
@@ -215,9 +219,8 @@ edad_decimal = float(input("Escribe tu edad con meses: "))
  """
 # ===================================================================================================================================================================================
 # DICCIONARIO
-# Estructura: keys: value, value, value etc
-# o keys : value ,
-#          value ,
+# es una estructura de datos que permite almacenar pares de clave-valor. Cada elemento en un diccionario tiene una clave única asociada a un valor. Las claves pueden ser de cualquier tipo inmutable, como cadenas, números o tuplas. Los valores pueden ser de cualquier tipo de datos, incluidos otros diccionarios. Los diccionarios en Python se definen mediante llaves {}, y los pares clave-valor se separan por dos puntos :.
+# Estructura: mi_diccionario = {"clave1": valor1, "clave2": valor2, "clave3": valor3}
 # debe usar solo datos "hashable"
 
 diccionario = {
@@ -560,12 +563,13 @@ suma(2, 5)
 # _________________________________________________________________________________________________________
 # BUCLE
 # sentencias que permiten iterar
+# for in /for in else: permite iterar listas, tuplas y conjuntos/set
 
 # for in: crea una variable
 # 1. crea lista
 # 2. bucle se ejecuta segun cuantos argumentos haya en la lista
 
-flores = (["Doca", "Tara", "Espino", "Chagual", "Manzanilla"])
+flores = ([" ", "Doca", "Tara", "Espino", "Chagual", "Manzanilla"])
 # la variable "flor" no se declara, porque solo se usa en esa variable de codigo
 # se refiere a que es un dato dentro de la variable que es una lista
 for flor in flores:
@@ -581,8 +585,76 @@ for gdato_de_la_lista in g_lista:
 
 # Iteraciones de dos listas
 # las listas deben tener la misma cantidad de elementos/datos
-# estructura: for lista1 , lista2 in zip(dato de la lista1, dato de la lista 2):
+# estructura: for dato de la lista1 , dato de la lista2 in zip(lista1, lista 2):
 
-for flores, g_lista in zip(flor, gdato_de_la_lista):
-    print(f"Recorriendo la lista 1: {flores}")
-    print(f"Recorriendo la lista 2: {g_lista}")
+for flor, gdato_de_la_lista in zip(flores, g_lista):
+    print(f"Recorriendo la lista 1: {flor}")
+    print(f"Recorriendo la lista 2: {gdato_de_la_lista}")
+
+# rangle
+# utiliza el rango de numeros que se le entrega incluido el primero pero no el ultimo
+for num in range(5, 10):
+    print(num)
+
+# forma de recorrer una lista con su indice
+# estructura:
+# for flor in enumerate(flores):
+#     indice = flor[0]
+#     valor = flor[1]
+#     print(f"{indice}. {valor}")
+
+for num in enumerate(g_lista):
+    indice = num[0]
+    valor = num[1]
+    print(f"{indice}. {valor}")
+
+for flor in enumerate(flores):
+    indice = flor[0]
+    valor = flor[1]
+    print(f"{indice}. {valor}")
+
+# for else
+
+for flor in enumerate(flores):
+    indice = flor[0]
+    valor = flor[1]
+    print(f"{indice}. {valor}")
+else:
+    print("No hay más flores en la lista")
+
+# otra forma de iterar un diccionario
+
+diccionario3 = {
+    "flor": "flower",
+    "abeja": "bee",
+    "polen": "poland"
+
+}
+
+for datos in diccionario3.items():
+    key = datos[0]
+    value = datos[1]
+    print(key)
+
+# para saltarse un elemento de la lista
+frutas = ["mandarina", "uva", "melon", "manzana", "duraznos"]
+
+for fruta in frutas:
+    if fruta == "manzana":
+        continue
+    print(f"De las frutas que me gustan, la fruta {fruta}, es mi favorita")
+
+# para terminar el bucle cuando encuentre cierto elemento
+
+for fruta in frutas:
+    print(f"Tengo ganas de comer {fruta}")
+    if fruta == "melon":
+        break
+
+print("Ya fue suficiente de frutas por hoy")
+
+# recorrer una cadena de texto
+cadena = "Hola, mi nombre es Amalia, me gustan las mandarinas, y los fidos con salsa blanca en sus variedades, adios."
+
+for letra in cadena:
+    print(letra)
