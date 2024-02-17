@@ -567,5 +567,22 @@ suma(2, 5)
 
 flores = (["Doca", "Tara", "Espino", "Chagual", "Manzanilla"])
 # la variable "flor" no se declara, porque solo se usa en esa variable de codigo
+# se refiere a que es un dato dentro de la variable que es una lista
 for flor in flores:
     print(f"Ahora la variable es igual a: {flor}")
+
+# En esta seccion recorrerá cada "gdato_de_la_lista" de la lista "g_lista", lo multiplicará por 5 en la nueva variable g_print
+
+g_lista = [10, 40, 600, 7, 50]
+
+for gdato_de_la_lista in g_lista:
+    gprint = gdato_de_la_lista*5
+    print(gprint)
+
+# Iteraciones de dos listas
+# las listas deben tener la misma cantidad de elementos/datos
+# estructura: for lista1 , lista2 in zip(dato de la lista1, dato de la lista 2):
+
+for flores, g_lista in zip(flor, gdato_de_la_lista):
+    print(f"Recorriendo la lista 1: {flores}")
+    print(f"Recorriendo la lista 2: {g_lista}")
