@@ -658,3 +658,43 @@ cadena = "Hola, mi nombre es Amalia, me gustan las mandarinas, y los fidos con s
 
 for letra in cadena:
     print(letra)
+# ==================================================================================================================================
+# FUNCIONES integradas
+# ABSTRACCION: SI SE ENTIENDE COMO FUNCIONA UNA FUNCON, NO ES NECESARIO QUE SEPAMOS COMO SE CREÓ
+# OCULTAR TODA LA COMPLEJIDAD DEL CODIGO, Y QUE SEA SENCILLA PARA INTERACTUAR CON EL PROGRAMA
+# BUILD IN, FUNCIONES INTEGRADAS DE PYTHON
+
+n_list_num = (1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+encontrar_num_mas_alto = max(n_list_num)
+print(encontrar_num_mas_alto)
+
+encontrar_num_mas_bajo = min(n_list_num)
+print(encontrar_num_mas_bajo)
+
+num_para_redondear = 122.41243
+redondear = round(num_para_redondear)
+print(redondear)
+# para decirle cuantos decimales quieres que tenga, le agregas una "," despues del numero con la cantidad de decimales
+print(round(num_para_redondear, 4))
+
+# BOOL
+# respuesta booleana
+
+# False
+# si le entregamos: 0, false, none, (vacio)
+
+# True
+# si le entregamos: distinto de 0, true, cualquier dato (no vacio)
+res_bool = bool()
+print(res_bool)
+# _______________________________________________
+
+# all
+# retorna true si todos los valores del iterable son verdaderos
+res_all = all([" sd", 30])
+print(res_all)
+
+num_para_sumar = (1, 9, 1, 1, 1, 9, 9, 8)
+print(sum(num_para_sumar))
+# ==================================================================================================================
