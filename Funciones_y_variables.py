@@ -698,3 +698,67 @@ print(res_all)
 num_para_sumar = (1, 9, 1, 1, 1, 9, 9, 8)
 print(sum(num_para_sumar))
 # ==================================================================================================================
+# FUNCIONES PROPIAS
+# def
+# PODEMOS USARLAS PARA SIMPLIFICAR A LA HORA DE VOLVER A LLAMARLAS MAS ADELANTE
+
+
+def funcion_amalia_flor():
+    print("La flor más bella de todas")
+
+
+# despues puede continuar el codigo, bla, bla ,bla
+# y de la nada, bam!! llamamos a la funcion: funcion_amalia_saludar
+# esta funcion se ejecutará
+
+funcion_amalia_flor()
+funcion_amalia_flor()
+funcion_amalia_flor()
+funcion_amalia_flor()
+
+# FUNCION CON PARAMETROS (VARIABLE PARA SER USADA SOLO DENTRO DE LA FUNCION)
+
+
+def funcion_amalia_saludar(nombre, sexo):
+    sexo = sexo.lower()
+    if (sexo == "mujer"):
+        adjetivo = "amiga"
+    elif (sexo == "hombre"):
+        adjetivo = "amigo"
+    else:
+        adjetivo = "qué tal?"
+
+    print(f"Hola {nombre},{adjetivo}, salimos a pasear a nuestros gatos?")
+
+
+funcion_amalia_saludar("Amalia", "mujer")
+funcion_amalia_saludar("Joaquín", "hombre")
+funcion_amalia_saludar("Bel", "N/B")
+# ______________________________________________________
+# return
+# sirve para la funcion se convertira en un valor que se puede asignar a otra variable
+# sirve para poder volver a usar un dato obtenido dentro de una funcion
+# almacena el dato obtenido para volver a usarlo fuera de la funcion
+
+
+def ejemplo_crear_contraseña(num):
+    # Se define una cadena de caracteres que se utilizará para generar la contraseña.En este caso, son letras minúsculas del alfabeto.
+    chars = "abcdefghij"
+    # Se convierte el número recibido como argumento, en una cadena de texto.
+    num_entero = str(num)
+    # Se extrae el primer dígito de la cadena num_entero y se convierte de nuevo a entero. Esto podría indicar que solo se considera el primer dígito del número para algo específico, como la longitud de la contraseña o algún otro propósito.
+    num = int(num_entero[0])
+
+    c1 = num - 2                # Según el dato recibido como argumento "num", se le restarán 2
+    c2 = num                    # Será el dato recibido como argumento "num"
+    c3 = num - 5                # Según el dato recibido como argumento "num", se le restarán 5
+    # confecciona la contraseña con el caracter encontrado entre el dato recibido en argumento y c1, lo mismo con c2 y c3, y se le agregará el dato recibido en el argumento, multiplicado por dos
+    contraseña = f"{chars[c1]}{chars[c2]}{chars[c3]}{chars[c1+c2+c3]}{num*2}"
+    # se almacenará la contraseña para ser usada posteriormente fuera de la funcion
+    return contraseña
+
+
+password = ejemplo_crear_contraseña(4)
+frase = f"Tu contraseña es: {password}"
+print(frase)
+# _________________________________________________________________
